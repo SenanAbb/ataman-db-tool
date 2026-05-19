@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 241 245 247;     /* #f1f5f7 — page bg, light teal-gray */
+    --color-card: 255 255 255;           /* white — surface for cards */
+    --color-foreground: 15 56 60;        /* #0f383c — FE primary */
+    --color-muted: 226 231 232;          /* #e2e7e8 — FE primary-50, secondary surface */
+    --color-border: 196 196 196;         /* #c4c4c4 — FE $gray */
+    --color-primary: 15 56 60;           /* #0f383c */
+    --color-accent: 0 178 199;           /* #00b2c7 — FE $vibrantBlue */
+    --color-destructive: 197 62 62;      /* #c53e3e — FE $red */
+    --color-warning: 217 119 6;          /* amber-600 (AA on white) */
+    --color-info: 76 158 185;            /* #4c9eb9 — FE $blue */
+    --color-success: 21 128 61;          /* #15803d — FE $darkGreen */
+  }
+
+  html {
+    font-family: var(--font-fira-sans), system-ui, sans-serif;
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  .font-mono,
+  [class*='tabular'] {
+    font-family: var(--font-fira-code), ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
