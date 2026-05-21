@@ -84,6 +84,30 @@ export interface ChainSeedHealth {
   chains_future_seed: number;
 }
 
+export interface HealthCheckResult {
+  total_chains: number;
+  chains_with_multiple_pending: number;
+  chains_with_out_of_order_pending: number;
+  chains_with_uncovered_pending: number;
+  chains_pending_in_deregistered_assets: number;
+}
+
+export interface HealthyChainsResult {
+  total_chains: number;
+  chains_violating_any: number;
+  chains_healthy: number;
+}
+
+export interface PendingCountBucketRow {
+  pending_count: number;
+  chains: number;
+}
+
+export interface I3RefinementResult {
+  strict_triple_duplicates: number;
+  pending_count_distribution: PendingCountBucketRow[];
+}
+
 export interface DryRunResult {
   n_seeds: number;
   n_candidates: number;

@@ -18,6 +18,11 @@ import {
   getCronVsSeeds,
   getChainSeedHealth,
 } from '@/lib/queries/diagnostic';
+import {
+  runHealthCheck,
+  getHealthyChainsBreakdown,
+  getI3Refinement,
+} from '@/lib/queries/health-check';
 import type {
   InventorySummary,
   YearBucketRow,
@@ -31,6 +36,9 @@ import type {
   RecentBatchSummary,
   CronVsSeedsResult,
   ChainSeedHealth,
+  HealthCheckResult,
+  HealthyChainsResult,
+  I3RefinementResult,
 } from '@/lib/types';
 
 export interface ActionResult<T> {
@@ -97,4 +105,17 @@ export async function loadCronVsSeeds(
 }
 export async function loadChainSeedHealth(tenant: string): Promise<ActionResult<ChainSeedHealth>> {
   return wrap(() => getChainSeedHealth(tenant));
+}
+export async function loadHealthCheck(tenant: string): Promise<ActionResult<HealthCheckResult>> {
+  return wrap(() => runHealthCheck(tenant));
+}
+export async function loadHealthyChainsBreakdown(
+  tenant: string,
+): Promise<ActionResult<HealthyChainsResult>> {
+  return wrap(() => getHealthyChainsBreakdown(tenant));
+}
+export async function loadI3Refinement(
+  tenant: string,
+): Promise<ActionResult<I3RefinementResult>> {
+  return wrap(() => getI3Refinement(tenant));
 }

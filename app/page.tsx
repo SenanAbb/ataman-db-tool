@@ -4,6 +4,7 @@ import { HealthPill } from '@/components/health-pill';
 import { InventorySection } from '@/components/sections/inventory-section';
 import { BagajeSection } from '@/components/sections/bagaje-section';
 import { DiagnosticSection } from '@/components/sections/diagnostic-section';
+import { HealthCheckSection } from '@/components/sections/health-check-section';
 import { DryRunSection } from '@/components/sections/dry-run-section';
 
 export const dynamic = 'force-dynamic';
@@ -29,6 +30,7 @@ export default async function Page({
       <InventorySection tenant={tenant} />
       <BagajeSection tenant={tenant} />
       <DiagnosticSection tenant={tenant} />
+      <HealthCheckSection tenant={tenant} />
       <DryRunSection tenant={tenant} />
     </main>
   );
